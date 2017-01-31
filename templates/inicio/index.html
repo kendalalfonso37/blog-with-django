@@ -1,0 +1,11 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block titulo %}
+	Inicio
+{% endblock titulo %}
+
+{% block contenido %}
+	{{block.super}}
+	<h1>Hola Mundo!</h1>
+{% endblock contenido %}
