@@ -9,8 +9,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-				<h3>Entradas Recientes</h3>
-				
+				<h1>Entradas Recientes</h1>
+				{% if object_list %}
+					{% for entrada in object_list %}
+						<h2>{{ entrada.titulo }} <span class="badge">{{ entrada.fecha }}</span></h2>
+						<br>
+						<div>
+							{{ entrada.contenido|safe  }}
+						</div>
+					{% endfor %}
+				{% endif %}				
 			</div>
 		</div>
 	</div>
