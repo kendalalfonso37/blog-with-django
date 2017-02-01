@@ -1,14 +1,18 @@
 {% extends "base/base.html" %}
 {% load staticfiles %}
 
-{% block titulo %}Detalle Entrada{% endblock titulo %}
+{% block titulo %}Entrada - {{object.titulo}}{% endblock titulo %}
 
 {% block contenido %}
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-				<h1></h1>
+				<h1>{{object.titulo}}</h1>
+				<time>{{object.fecha}}</time>
+				<div>
+					{{object.contenido|safe}}
+				</div>
 			</div>
 		</div>
 	</div>

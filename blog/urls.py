@@ -21,12 +21,12 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-	url(r'^admin/filebrowser/', include(site.urls), name='filebrowser'),
+	url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^admin/', admin.site.urls),
     url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^articulos/', include('apps.entrada.urls'), name='articulos'),
-    url(r'^$', views.index, name='inicio'),
+    url(r'^articulos/', include('apps.entrada.urls', namespace='articulos')),
+    url(r'^$', views.index),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

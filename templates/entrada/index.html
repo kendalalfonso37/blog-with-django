@@ -12,13 +12,14 @@
 				<h1>Entradas Recientes</h1>
 				{% if object_list %}
 					{% for entrada in object_list %}
-						<h2>{{ entrada.titulo }} <span class="badge">{{ entrada.fecha }}</span></h2>
-						<br>
+						<h2><a href="{% url 'articulos:entrada-detalle' entrada.slug %}">{{ entrada.titulo }}</a><span class="badge">{{ entrada.fecha }}</span></h2>
 						<div>
-							{{ entrada.contenido|safe  }}
+							{{ entrada.contenido|safe|truncatechars:200  }}
 						</div>
+						<br>
 					{% endfor %}
-				{% endif %}				
+					<br>
+				{% endif %}
 			</div>
 		</div>
 	</div>
